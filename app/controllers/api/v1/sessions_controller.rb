@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class SessionsController < Devise::SessionsController
@@ -6,10 +8,12 @@ module Api
 
       def create
         if @user.valid_password?(sign_in_params[:password])
-          sign_in "user", @user
-          render json: {messages: I18n.t('signed_in_successfully'), is_success: true, data: { user: @user }}, status: :ok
+          sign_in 'user', @user
+          render json: { messages: I18n.t('signed_in_successfully'), is_success: true, data: { user: @user } },
+                 status: :ok
         else
-          render json: {messages: I18n.t('signed_in_failed_unauthorized'), is_success: false, data: {}}, status: :unauthorized
+          render json: { messages: I18n.t('signed_in_failed_unauthorized'), is_success: false, data: {} },
+                 status: :unauthorized
         end
       end
 
@@ -26,11 +30,7 @@ module Api
 
       def load_user
         @user = User.find_for_database_authentication(email: sign_in_params[:email])
-        if @user
-          return @user
-        else
-          render json: {messages: I18n.t('cannot_get_user'), is_success: false, data: {}}, status: :not_found
-        end
+        @user || render(json: { messages: I18n.t('cannot_get_user'), is_success: false, data: {} }, status: :not_found)
       end
     end
   end

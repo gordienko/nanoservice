@@ -39,15 +39,15 @@ POST http://localhost:3000/api/v1/sign_in
 POST http://localhost:3000/api/v1/messages
 ```json
 {
-	"body": "Привет! Эта наша первая пассылка",
+	"body": "Привет! Эта наша первая рассылка :)",
 	"dispatches_attributes": [
 		{
 			"phone": "+79308409858",
-			"messenger_type": "telegram", 
+			"messenger_type": "telegram" 
 		},
 		{
 			"phone": "+79308409858",
-			"messenger_type": "viber",
+			"messenger_type": "viber"
 		},
 		{
 			"phone": "+79308509158",
@@ -56,7 +56,7 @@ POST http://localhost:3000/api/v1/messages
 		},
 		{
 			"phone": "+79308509258",
-			"messenger_type": "viber",
+			"messenger_type": "whatsapp",
 			"send_at": "2020-10-07 22:04:48.586544 +0300"
 		}
 	]
