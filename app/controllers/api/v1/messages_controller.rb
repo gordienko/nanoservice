@@ -4,13 +4,9 @@ module Api
   module V1
     class MessagesController < ActionController::API
       # acts_as_token_authentication_handler_for User
+      before_action :need_authenticate!
 
       def create
-        unless user_signed_in?
-          render json: { messages: I18n.t('user_unauthorized'), is_success: false, data: {} },
-                 status: :unauthorized and return
-        end
-
         @message = Message.new(message_params)
         @message.user = current_user
 
@@ -27,6 +23,13 @@ module Api
 
       def message_params
         params.permit(:body, dispatches_attributes: %i[id phone messenger_type send_at])
+      end
+
+      def need_authenticate!
+        unless user_signed_in?
+          render json: { messages: I18n.t('user_unauthorized'), is_success: false, data: {} },
+                 status: :unauthorized
+        end
       end
     end
   end

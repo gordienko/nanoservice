@@ -1,6 +1,0 @@
-.mb-3{class: ('form-group-invalid' if f.object.errors[field].any?)}
-  = f.label field, class: 'form-label'
-  = f.rich_text_area field, class: ("border-danger is-invalid" if f.object.errors[field].any?)
-  - if f.object.errors[field].any?
-    .invalid-feedback
-      = f.object.errors.full_message(field, f.object.errors[field].join(', '))
