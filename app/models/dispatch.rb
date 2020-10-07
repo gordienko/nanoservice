@@ -24,7 +24,7 @@ class Dispatch < ApplicationRecord
   end
 
   def validate_send_at
-    if send_at && send_at <= Time.now
+    if send_at && send_at <= Time.zone.now
       errors.add(:send_at, I18n.t('must_be_greater_than_the_current_time'))
     end
   end
@@ -39,6 +39,6 @@ class Dispatch < ApplicationRecord
   end
 
   def send_message
-    SendMessageJob.set(wait_until: (send_at? ? send_at : Time.now)).perform_later(self)
+    SendMessageJob.set(wait_until: (send_at? ? send_at : Time.zone.now)).perform_later(self)
   end
 end
