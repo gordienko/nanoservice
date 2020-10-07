@@ -33,5 +33,6 @@ module Nanoservice
     config.generators.system_tests = nil
     config.i18n.default_locale = :ru
     config.i18n.available_locales = [:en, :ru]
+    config.time_zone = 'Europe/Moscow'
   end
 end

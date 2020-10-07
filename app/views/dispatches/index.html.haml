@@ -17,6 +17,6 @@
           .text-muted.small= dispatch.message.body
         %td= dispatch.phone
         %td= dispatch.messenger_type
-        %td= dispatch.send_at
+        %td= l(dispatch.send_at, format: :short) if dispatch.send_at
         %td= dispatch.status
 
