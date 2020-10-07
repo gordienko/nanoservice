@@ -1,0 +1,8 @@
+development:
+  :concurrency: 10
+  :queues:
+    - nanoservice_development_default
+production:
+  :concurrency: 10
+  :queues:
+    - nanoservice_production_default

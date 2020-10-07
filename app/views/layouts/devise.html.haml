@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %title Nanoservice
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container-fluid
+      .row
+        = render partial: 'shared/navbar'
+    .container
+      .row
+        .col-12
+          .card.card-body.shadow-lg
+            = yield

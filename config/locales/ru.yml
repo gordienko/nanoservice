@@ -1,0 +1,36 @@
+ru:
+  nanoservice: "Nanoservice"
+  account: "Аккаунт"
+  logout: "Выйти"
+  sign_up: "Регистрация"
+  login: "Войти"
+  home: "Главная"
+  save: "Сохранить"
+  show: "Просмотр"
+  back: "Назад"
+  edit: "Редактировать"
+  destroy: "Удалить"
+  activerecord:
+    attributes:
+      user:
+        email: Email
+      dispatch:
+        message: Сообщение
+        phone: Получатель
+        messenger_type: Мессенджер
+        send_at: Отправить
+        status: Статус
+  are_you_sure: "Вы уверены?"
+  dispatches: "Отправки"
+  sidekiq: "Задачи"
+  must_be_greater_than_the_current_time: "должна быть больше текущего времени"
+  uniqueness_constraint_violated: "нарушено ограничение уникальности!"
+  a_similar_message_using_messenger_type_has_already_been_sent_to_phone: "аналогичное сообщение с помощью %{messenger_type} уже было отправлено на номер %{phone}"
+  must_have_at_least_one_dispatch: "Должна быть хотя бы одна отправка"
+  there_was_an_error_sending_your_message: "Произошла ошибка в процессе отправки сообщения!"
+  signed_in_successfully: "Вы успешно вошли в систему"
+  signed_in_failed_unauthorized: "Ошибка входа"
+  signed_out_successfully: "Вы успешно вышли из системы"
+  cannot_get_user: "Не удалось получить пользователя"
+  message_sent_for_processing: "Сообщение отправлено в обработку"
+  user_unauthorized: "Пользователь не авторизован"

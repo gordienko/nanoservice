@@ -1,0 +1,22 @@
+- content_for :title, "Listing dispatches"
+
+%table.table
+  %thead
+    %tr
+      %th Message
+      %th Phone
+      %th Messenger type
+      %th Send at
+      %th Status
+
+  %tbody
+    - @dispatches.each do |dispatch|
+      %tr
+        %td
+          = dispatch.message.id
+          .text-muted.small= dispatch.message.body
+        %td= dispatch.phone
+        %td= dispatch.messenger_type
+        %td= dispatch.send_at
+        %td= dispatch.status
+
