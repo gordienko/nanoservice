@@ -21,11 +21,11 @@ gem "simple_form", "~> 5.0"
 gem "enumerize", "~> 2.3"
 gem "sidekiq", "~> 6.1"
 gem "phonelib", "~> 0.6.45"
-gem "faker", "~> 2.14"
 gem "simple_token_authentication", "~> 1.17"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "faker", "~> 2.14"
 end
 
 group :development do

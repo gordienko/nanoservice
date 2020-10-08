@@ -3,6 +3,7 @@
 %table.table
   %thead
     %tr
+      %th User
       %th Message
       %th Phone
       %th Messenger type
@@ -13,10 +14,12 @@
     - @dispatches.each do |dispatch|
       %tr
         %td
+          = dispatch.message.user.email
+        %td
           = dispatch.message.id
           .text-muted.small= dispatch.message.body
         %td= dispatch.phone
         %td= dispatch.messenger_type
-        %td= l(dispatch.send_at, format: :short) if dispatch.send_at
+        %td= l(dispatch.send_at||dispatch.created_at, format: :short)
         %td= dispatch.status
 
